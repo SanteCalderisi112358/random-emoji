@@ -1,8 +1,9 @@
+import apiKey from './config.js';
 const btnEl = document.querySelector('.btn')
 const nameEl = document.querySelector('.name-emoji')
-const apiKey = '8c0a442a7f48eac04ef3e7e64b4936533397f672'
 const apiUrl = `https://emoji-api.com/emojis?access_key=${apiKey}`
 let data = []
+
 btnEl.addEventListener('click', fetchEmoji)
 
 async function fetchEmoji() {
@@ -19,11 +20,10 @@ async function fetchEmoji() {
         console.log(character)
         console.log(slug)
     } catch (error) {
-btnEl.innerText = 'Click again'
-nameEl.innerText = 'Problem with connection'
+        btnEl.innerText = 'Click again'
+        nameEl.innerText = 'Problem with connection'
     }
 }
-
 
 function randomNumber(array) {
     return Math.floor(Math.random() * array.length)
